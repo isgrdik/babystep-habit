@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>ベビステちゃん「1分習慣」応援公式LINE</title>
 <meta name="description" content="続かないのは、あなたのせいじゃない。まずは1分だけ。ベビステちゃんと一緒に30日間の小さな一歩をLINEで続ける読者限定サポートです。">
-<meta name="robots" content="noindex, nofollow"> 
+
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
 <style>
@@ -35,8 +35,9 @@ h1,h2,h3,p{margin:0}
 .hero-points{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:18px 0 0}
 .hero-point{background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px 6px;font-size:12px;font-weight:600;line-height:1.45;box-shadow:0 8px 18px rgba(38,58,75,.06)}
 .hero-point span{display:block;font-size:22px;margin-bottom:2px}
-.cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:58px;margin-top:64px;border:0;border-radius:999px;background:linear-gradient(180deg,#2bdc62,#19b84f);color:#fff;font:inherit;font-size:17px;font-weight:700;box-shadow:0 6px 0 #109640,0 12px 26px rgba(29,180,79,.24);cursor:pointer}
-.cta:active{transform:translateY(3px);box-shadow:0 3px 0 #109640,0 8px 20px rgba(29,180,79,.18)}
+.cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:58px;margin-top:64px;border:0;border-radius:999px;background:linear-gradient(180deg,#2bdc62,#19b84f);color:#fff;font:inherit;font-size:17px;font-weight:700;box-shadow:0 6px 0 #109640,0 12px 26px rgba(29,180,79,.24);cursor:pointer;transition:transform .18s ease,box-shadow .18s ease,filter .18s ease}
+.cta:hover{transform:translateY(-2px);filter:brightness(1.06);box-shadow:0 8px 0 #109640,0 16px 32px rgba(29,180,79,.32)}
+.cta:active{transform:translateY(3px);filter:none;box-shadow:0 3px 0 #109640,0 8px 20px rgba(29,180,79,.18)}
 .note{margin-top:8px;color:#7c8a95;font-size:12px;line-height:1.65;text-align:center}
 section{padding:56px 0}
 .section-head{text-align:center;margin-bottom:18px}
@@ -135,15 +136,15 @@ input:disabled, button:disabled { opacity: 0.4; cursor: not-allowed; }
 
 /* --- 共感セクション --- */
 .empathy-section{padding:56px 0}
-.empathy-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
-.empathy-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px 12px 16px;text-align:center;box-shadow:0 6px 16px rgba(38,58,75,.06);display:flex;flex-direction:column;align-items:center;gap:10px}
-.empathy-num{position:absolute;top:10px;left:12px;width:22px;height:22px;border-radius:50%;background:#1a9648;color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;line-height:1}
-.empathy-illust{width:80px;height:80px;display:flex;align-items:center;justify-content:center;border-radius:8px;background:#e8ede9;overflow:hidden}
+.empathy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:28px}
+.empathy-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 8px 14px;text-align:center;box-shadow:0 6px 16px rgba(38,58,75,.06);display:flex;flex-direction:column;align-items:center;gap:10px}
+.empathy-num{position:absolute;top:10px;left:10px;width:22px;height:22px;border-radius:50%;background:#1a9648;color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;line-height:1}
+.empathy-illust{width:64px;height:64px;display:flex;align-items:center;justify-content:center;border-radius:8px;background:#e8ede9;overflow:hidden}
 .empathy-illust img{width:100%;height:100%;object-fit:cover}
 .empathy-label{font-size:16px;font-weight:600;line-height:1.5;color:var(--text)}
 .green-em2{color:#1a9648}
 @media(min-width:760px){
-  .empathy-grid{grid-template-columns:repeat(4,1fr);gap:10px}
+  .empathy-grid{grid-template-columns:repeat(3,1fr);gap:16px}
   .empathy-illust{width:88px;height:88px}
 }
 
@@ -219,52 +220,78 @@ input:disabled, button:disabled { opacity: 0.4; cursor: not-allowed; }
   .trust-grid{grid-template-columns:repeat(3,1fr)}
 }
 
+/* --- 監修者プロフィール --- */
+.profile-section{padding:56px 0}
+.profile-card{max-width:720px;margin:0 auto;padding:28px 22px;display:flex;flex-direction:column;align-items:center;gap:16px}
+.profile-photo{width:120px;height:120px;border-radius:50%;overflow:hidden;flex:0 0 auto;background:var(--pale);border:3px solid #fff;box-shadow:0 8px 20px rgba(38,58,75,.12)}
+.profile-photo img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.profile-body{display:flex;flex-direction:column;gap:10px;width:100%}
+.profile-role{font-size:15px;font-weight:700;color:var(--green-dark);line-height:1.6;text-align:center}
+.profile-text{font-size:15px;color:var(--sub);line-height:2.05;text-align:left}
+@media(min-width:641px){
+  .profile-card{flex-direction:row;align-items:flex-start;gap:26px;padding:32px}
+  .profile-photo{width:140px;height:140px}
+  .profile-role{text-align:left}
+}
+
+/* --- 関連書籍のご案内 --- */
+.book-section{padding:56px 0}
+.book-card{max-width:720px;margin:0 auto;padding:28px 22px;display:flex;flex-direction:column;align-items:center;gap:20px}
+.book-cover{width:150px;flex:0 0 auto}
+.book-cover img{width:100%;filter:drop-shadow(0 10px 20px rgba(38,58,75,.18))}
+.book-body{display:flex;flex-direction:column;gap:12px;width:100%}
+.book-title{font-size:15px;font-weight:700;color:var(--text);line-height:1.6;text-align:center}
+.book-lead{font-size:16px;font-weight:700;color:var(--green-dark);line-height:1.7;text-align:center}
+.book-text{font-size:15px;color:var(--sub);line-height:1.95;text-align:left}
+.book-cta{display:inline-flex;align-items:center;justify-content:center;min-height:44px;margin:8px auto 0;padding:10px 28px;border:1.5px solid #c4ced5;border-radius:999px;background:#fff;color:var(--sub);font-size:14px;font-weight:600;cursor:pointer;transition:background .18s ease,border-color .18s ease,color .18s ease}
+.book-cta:hover{background:#f6fafb;border-color:#9fb0ba;color:var(--text)}
+.book-cta:active{background:#f2f6f8}
+@media(min-width:641px){
+  .book-card{flex-direction:row;align-items:flex-start;gap:28px;padding:32px}
+  .book-cover{width:170px}
+  .book-title,.book-lead{text-align:left}
+  .book-cta{margin:8px 0 0;align-self:flex-start}
+}
+
 .hidden { display: none !important; }
 </style>
 </head>
 <body>
 <nav class="topbar">
-  <div class="brand"><img src="./images/icon.png" alt="ベビステちゃん"><span><span style="white-space:nowrap">古川武士</span><span style="white-space:nowrap">「あきれるほど小さい習慣」</span><span style="white-space:nowrap">ベビステちゃん「1分習慣」応援公式LINE</span></span></div>
+  <div class="brand"><img src="./images/icon.png" alt="ベビステちゃん"><span><span style="white-space:nowrap">古川武士監修。</span><span style="white-space:nowrap">ベビステちゃん「1分習慣」応援公式LINE</span></span></div>
 </nav>
 <div class="page">
 
   <header class="hero">
-    <h1 class="book-wrap"><picture><source media="(min-width:760px)" srcset="./images/hero-pc.png"><img src="./images/hero-sp.png" alt="書籍『ベビーステップ習慣術』仮表紙"></picture></h1>
+    <h1 class="book-wrap"><picture><source media="(min-width:760px)" srcset="./images/hero-pc.png"><img src="./images/hero-sp.png" alt="マイ・ベビーステップ"></picture></h1>
     <a class="cta" href="#form">無料ではじめる</a>
   </header>
 
   <!-- 共感セクション -->
   <section class="empathy-section">
     <div class="section-head">
-      <h2><span style="white-space:nowrap">本を読んで、</span><span style="white-space:nowrap" class="green-em2">こんなことはありませんか？</span></h2>
+      <h2><span style="white-space:nowrap">「今度こそ続けたい」<br>と思ったけど<br><span style="white-space:nowrap" class="green-em2">こんなことはありませんか？</span></h2>
     </div>
     <div class="empathy-grid">
 
-      <!-- カード1: 本を読んで「やってみよう」と思った -->
+      <!-- カード1: 「やってみよう」と思った -->
       <div class="empathy-card">
         <span class="empathy-num">1</span>
         <div class="empathy-illust"><img src="./images/illust1.png" alt="イラスト1（仮）"></div>
         <div class="empathy-label">「やってみよう」と<br>思った</div>
       </div>
 
-      <!-- カード2: 良い内容だった -->
+      <!-- カード2: 何から始めればいいかわからない -->
       <div class="empathy-card">
         <span class="empathy-num">2</span>
-        <div class="empathy-illust"><img src="./images/illust2.png" alt="イラスト2（仮）"></div>
-        <div class="empathy-label">良い内容だった</div>
-      </div>
-
-      <!-- カード3: 何から始めればいいかわからない -->
-      <div class="empathy-card">
-        <span class="empathy-num">3</span>
-        <div class="empathy-illust"><img src="./images/illust3.png" alt="イラスト3（仮）"></div>
+        <div class="empathy-illust"><img src="./images/illust3.png" alt="イラスト2（仮）"></div>
         <div class="empathy-label">でも何から始めれば<br>いいかわからない</div>
       </div>
 
-      <!-- カード4: 一人では続けられる気がしない -->
+      <!-- カード3: 一人では続けられる気がしない -->
       <div class="empathy-card">
-        <span class="empathy-num">4</span>
-        <div class="empathy-illust"><img src="./images/illust4.png" alt="イラスト4（仮）"></div>
+        <span class="empathy-num">3</span>
+        <div class="empathy-illust"><img src="./images/illust4.png" alt="イラスト3（仮）"></div>
         <div class="empathy-label">一人では続けられる<br>気がしない</div>
       </div>
 
@@ -274,8 +301,7 @@ input:disabled, button:disabled { opacity: 0.4; cursor: not-allowed; }
   <!-- ブリッジセクション -->
   <section class="bridge-section">
     <div class="bridge-inner">
-      <h2 class="bridge-h2">本を読むだけでは<br>習慣は変わりません</h2>
-      <p>大切なのは、知ることではなく続けること。<br>どんなに良い本でも、実践できなければ現実は変わりません。</p>
+      <h2 class="bridge-h2">続かないのは、意志のせいじゃなく<br>一歩が大きすぎるだけ</h2>
     </div>
     <div class="bridge-arrow">
       <svg width="48" height="32" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -348,7 +374,7 @@ input:disabled, button:disabled { opacity: 0.4; cursor: not-allowed; }
       <div class="trust-card">
         <div class="trust-icon">🎁</div>
         <div class="trust-content">
-          <strong>書籍購入者は<br>無料で利用できます</strong>
+          <strong>どなたでも<br>無料で利用できます</strong>
           <p>30日間のLINEサポートを無料でご利用いただけます。</p>
         </div>
       </div>
@@ -417,6 +443,38 @@ input:disabled, button:disabled { opacity: 0.4; cursor: not-allowed; }
         </ol>
         <p>※コードが届かない場合は、迷惑メールフォルダをご確認ください。</p>
       </details>
+    </div>
+  </section>
+
+  <!-- 監修者プロフィール -->
+  <section class="profile-section">
+    <div class="section-head">
+      <h2>監修者プロフィール</h2>
+    </div>
+    <div class="profile-card card">
+      <div class="profile-photo"><img src="./images/profile.png" alt="古川武士"></div>
+      <div class="profile-body">
+        <p class="profile-role">古川武士（ふるかわ・たけし）</p>
+        <p class="profile-text">習慣化コンサルタント。習慣化コンサルティング株式会社代表取締役。1977年、大阪府生まれ。関西大学卒業後、日立製作所などを経て2006年に独立。約5万人のビジネスパーソンの育成と千人以上の個人コンサルティングの経験から「続ける習慣」がもっとも重要なテーマと考え、日本で唯一の習慣化をテーマにしたコンサルティング会社を設立。オリジナルの習慣化理論・技術を基に、個人向けの「習慣化の学校」、法人向けの「習慣化研修」を提供している。NHK「あさイチ」「ごごナマ」、TBS「情報7daysニュースキャスター」など250以上のTV、ラジオ、雑誌に出演。著書は、習慣化に特化したテーマでこれまでに26冊を出版、累計120万部を超え、中国、韓国、タイ、ベトナム、インドネシア、マレーシアでも翻訳出版され、中国廈門では6千名規模の講演を行った。主な著書に『書く瞑想』（ダイヤモンド社）がある。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 関連書籍のご案内（書籍タイトルはこのセクション内でのみ表示可） -->
+  <section class="book-section">
+    <div class="section-head">
+      <h2>関連書籍のご案内</h2>
+    </div>
+    <div class="book-card card">
+      <div class="book-cover"><img src="./images/book.png" alt="あきれるほど小さい習慣 書影"></div>
+      <div class="book-body">
+        <h3 class="book-title">『あきれるほど小さい習慣』古川武士著 / ダイヤモンド社</h3>
+        <!-- 以下の本文は7/12版の仮テキスト。古川さん確認後に差し替えの可能性あり -->
+        <p class="book-lead">「実践のLINE」と「理論の書籍」を両輪に。</p>
+        <p class="book-text">『マイ・ベビーステップ』は、毎日の行動を挫折させないための「実践の仕組み」です。なぜベビーステップがこれほど強力なのか、その本質とロジックをより深く学び、一生モノのスキルにしたい方は、ぜひ本書もお読みください。</p>
+        <!-- TODO: Amazon商品URLを設定してください -->
+        <a class="book-cta" href="#" target="_blank" rel="noopener">Amazonで購入する</a>
+      </div>
     </div>
   </section>
 
