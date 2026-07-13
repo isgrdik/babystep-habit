@@ -152,6 +152,12 @@ input:disabled, button:disabled { opacity: 0.4; cursor: not-allowed; }
 .bridge-section{padding:40px 0 0}
 .bridge-inner{text-align:center}
 .bridge-h2{font-size:clamp(24px,5.5vw,32px);line-height:1.45;font-weight:700;color:#1a3828}
+.bridge-h2 .tablet-break{display:block}
+.bridge-h2 .pc-break{display:none}
+@media(min-width:760px){
+  .bridge-h2 .tablet-break{display:none}
+  .bridge-h2 .pc-break{display:block}
+}
 .bridge-inner p{margin-top:12px;font-size:16px;color:#3d5047;line-height:1.85}
 .bridge-arrow{display:flex;justify-content:center;margin-top:28px;color:#3daa6a}
 
@@ -303,7 +309,7 @@ input:disabled, button:disabled { opacity: 0.4; cursor: not-allowed; }
   <!-- ブリッジセクション -->
   <section class="bridge-section">
     <div class="bridge-inner">
-      <h2 class="bridge-h2">続かないのは、意志のせいじゃなく<br>一歩が大きすぎるだけ</h2>
+      <h2 class="bridge-h2">続かないのは、<br class="tablet-break">意志のせいじゃなく<br>一歩が大きすぎるだけ</h2>
     </div>
     <div class="bridge-arrow">
       <svg width="48" height="32" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
