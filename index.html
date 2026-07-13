@@ -160,6 +160,8 @@ input:disabled, button:disabled { opacity: 0.4; cursor: not-allowed; }
 .mech-h2{font-size:clamp(22px,5.8vw,34px);line-height:1.35;font-weight:700;margin-bottom:24px;text-align:center}
 .sp-only{display:block}
 @media(min-width:600px){.sp-only{display:none}}
+.pc-only{display:none}
+@media(min-width:600px){.pc-only{display:block}}
 .mechanism-inner{display:flex;flex-direction:column;gap:20px;width:100%}
 .mech-mascot{}
 
@@ -314,7 +316,8 @@ input:disabled, button:disabled { opacity: 0.4; cursor: not-allowed; }
   <section class="mechanism-section">
     <h2 class="mech-h2">ベビステちゃんが<br><span class="green-em">あなたの小さな一歩</span>を<br class="sp-only">応援します</h2>
     <div class="mechanism-inner">
-      <img class="mech-mascot" src="./images/mechanism-illust.png" alt="ベビステちゃん">
+      <img class="mech-mascot pc-only" src="./images/mechanism-illust-pc.png" alt="ベビステちゃん">
+      <img class="mech-mascot sp-only" src="./images/Mechanism-illust-sp.png" alt="ベビステちゃん">
       
     </div>
     
