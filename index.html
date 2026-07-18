@@ -137,16 +137,16 @@ input:disabled, button:disabled { opacity: 0.4; cursor: not-allowed; }
 
 /* --- 共感セクション --- */
 .empathy-section{padding:56px 0}
-.empathy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:28px}
-.empathy-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 8px 14px;text-align:center;box-shadow:0 6px 16px rgba(38,58,75,.06);display:flex;flex-direction:column;align-items:center;gap:10px}
-.empathy-num{position:absolute;top:10px;left:10px;width:22px;height:22px;border-radius:50%;background:#1a9648;color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;line-height:1}
-.empathy-illust{width:64px;height:64px;display:flex;align-items:center;justify-content:center;border-radius:8px;background:#e8ede9;overflow:hidden}
+.empathy-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:28px}
+.empathy-card{position:relative;width:339px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 16px;text-align:left;box-shadow:0 6px 16px rgba(38,58,75,.06);display:flex;flex-direction:row;align-items:center;gap:14px}
+.empathy-illust{width:100px;height:100px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;border-radius:8px;background:#e8ede9;overflow:hidden}
 .empathy-illust img{width:100%;height:100%;object-fit:cover}
 .empathy-label{font-size:16px;font-weight:600;line-height:1.5;color:var(--text)}
 .green-em2{color:#1a9648}
 @media(min-width:760px){
   .empathy-grid{grid-template-columns:repeat(3,1fr);gap:16px}
-  .empathy-illust{width:88px;height:88px}
+  .empathy-card{width:auto;margin:0;flex-direction:column;text-align:center;padding:18px 8px 14px}
+  .empathy-illust{width:200px;height:200px}
 }
 
 /* --- ブリッジ --- */
@@ -285,23 +285,20 @@ input:disabled, button:disabled { opacity: 0.4; cursor: not-allowed; }
 
       <!-- カード1: 「やってみよう」と思った -->
       <div class="empathy-card">
-        <span class="empathy-num">1</span>
-        <div class="empathy-illust"><img src="./images/illust1.png" alt="イラスト1（仮）"></div>
-        <div class="empathy-label">「やってみよう」と<br>思った</div>
+        <div class="empathy-illust"><img src="./images/illust1.png" alt="「明日こそ早起き」のはずが二度寝"></div>
+        <div class="empathy-label">「明日こそ早起き」<br>のはずが二度寝…</div>
       </div>
 
       <!-- カード2: 何から始めればいいかわからない -->
       <div class="empathy-card">
-        <span class="empathy-num">2</span>
-        <div class="empathy-illust"><img src="./images/illust3.png" alt="イラスト2（仮）"></div>
-        <div class="empathy-label">でも何から始めれば<br>いいかわからない</div>
+        <div class="empathy-illust"><img src="./images/illust2.png" alt="やめなきゃなのにスマホが閉じられない"></div>
+        <div class="empathy-label">やめなきゃなのに<br>スマホが閉じられない</div>
       </div>
 
       <!-- カード3: 一人では続けられる気がしない -->
       <div class="empathy-card">
-        <span class="empathy-num">3</span>
-        <div class="empathy-illust"><img src="./images/illust4.png" alt="イラスト3（仮）"></div>
-        <div class="empathy-label">一人では続けられる<br>気がしない</div>
+        <div class="empathy-illust"><img src="./images/illust3.png" alt="「やらなきゃ」と思うほど動けない…"></div>
+        <div class="empathy-label">「やらなきゃ」と<br>思うほど動けない…</div>
       </div>
 
     </div>
@@ -310,7 +307,7 @@ input:disabled, button:disabled { opacity: 0.4; cursor: not-allowed; }
   <!-- ブリッジセクション -->
   <section class="bridge-section">
     <div class="bridge-inner">
-      <h2 class="bridge-h2">続かないのは<br class="tablet-break">意志のせいじゃなく<br>一歩が大きすぎるだけ</h2>
+      <h2 class="bridge-h2">続かないのは<br class="tablet-break">意志のせいじゃなく<br><span class="green-em">最初の一歩</span>が大きすぎるだけ</h2>
     </div>
     <div class="bridge-arrow">
       <svg width="48" height="32" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -583,6 +580,7 @@ async function sendData(event) {
         if (response.ok) {
             inputArea.style.display = 'none';
             successArea.style.display = 'block';
+            document.querySelector('.bottom-cta').style.display = 'none';
             document.getElementById('form').scrollIntoView({ behavior: 'smooth' });
         } else {
             throw new Error('API Server Error');
