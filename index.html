@@ -190,6 +190,7 @@ input:disabled, button:disabled { opacity: 0.4; cursor: not-allowed; }
 .book-cover img{width:100%;filter:drop-shadow(0 10px 20px rgba(38,58,75,.18))}
 .book-body{display:flex;flex-direction:column;gap:12px;width:100%}
 .book-title{font-size:15px;font-weight:700;color:var(--text);line-height:1.6;text-align:center}
+.book-break{display:block}
 .book-lead{font-size:16px;font-weight:700;color:var(--green-dark);line-height:1.7;text-align:center}
 .book-text{font-size:15px;color:var(--sub);line-height:1.95;text-align:left}
 .book-cta{display:inline-flex;align-items:center;justify-content:center;min-height:44px;margin:8px auto 0;padding:10px 28px;border:1.5px solid #c4ced5;border-radius:999px;background:#fff;color:var(--sub);font-size:14px;font-weight:600;cursor:pointer;transition:background .18s ease,border-color .18s ease,color .18s ease}
@@ -200,6 +201,10 @@ input:disabled, button:disabled { opacity: 0.4; cursor: not-allowed; }
   .book-cover{width:170px}
   .book-title,.book-lead{text-align:left}
   .book-cta{margin:8px 0 0;align-self:flex-start}
+  .book-break{display:none}
+}
+@media(min-width:641px) and (max-width:759px){
+  .profile-section,.book-section{width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);padding-left:18px;padding-right:18px}
 }
 
 .hidden { display: none !important; }
@@ -418,8 +423,8 @@ input:disabled, button:disabled { opacity: 0.4; cursor: not-allowed; }
     <div class="book-card card">
       <div class="book-cover"><img src="./images/book.png" alt="あきれるほど小さい習慣 書影"></div>
       <div class="book-body">
-        <h3 class="book-title">『あきれるほど小さい習慣』古川武士著 / ダイヤモンド社</h3>
-        <p class="book-lead">「実践のLINE」と「理論の書籍」を両輪に。</p>
+        <h3 class="book-title">『あきれるほど小さい習慣』<br class="book-break">古川武士著 / ダイヤモンド社</h3>
+        <p class="book-lead">「実践のLINE」と「理論の書籍」<br class="book-break">を両輪に。</p>
         <p class="book-text">『マイ・ベビーステップ』は、毎日の行動を挫折させないための「実践の仕組み」です。なぜベビーステップがこれほど強力なのか、その本質とロジックをより深く学び、一生モノのスキルにしたい方は、ぜひ本書もお読みください。</p>
         <a class="book-cta" href="https://www.amazon.co.jp/%E3%81%82%E3%81%8D%E3%82%8C%E3%82%8B%E3%81%BB%E3%81%A9%E5%B0%8F%E3%81%95%E3%81%84%E7%BF%92%E6%85%A3-%E5%8F%A4%E5%B7%9D%E6%AD%A6%E5%A3%AB/dp/4478124663" target="_blank" rel="noopener">Amazonで購入する</a>
       </div>
