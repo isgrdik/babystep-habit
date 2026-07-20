@@ -1,5 +1,5 @@
 # プロジェクト概要
-古川武士「あきれるほど小さい習慣」の読者向けLINEサポートサービス登録LP（`test_v2.html`）。
+古川武士「あきれるほど小さい習慣」の読者向けLINEサポートサービス登録LP（`index.html`）。
 ターゲット：習慣化に挫折した経験がある30〜50代。
 トーン：やさしく、背中を押す。押しつけがましくない。
 
@@ -49,7 +49,7 @@
 
 1. **トップバー** - ロゴ画像 + 「古川武士「あきれるほど小さい習慣」実践サポート」
 2. **ヒーロー** - 書籍画像（左）+ キャッチコピー・CTAボタン（右）
-3. **共感セクション** - 「本を読んで、こんなことはありませんか？」4枚カード（ダミーイラスト入り、差し替え予定）
+3. **共感セクション** - 「今度こそ続けたい、と思ったけどこんなことはありませんか？」3枚カード（イラスト入り）
 4. **ブリッジ** - 「本を読むだけでは、習慣は変わりません。」+ 下向きシェブロン
 5. **仕組みセクション** - テキスト（左）+ スマホモックアップ（右）
 6. **4ステップ** - テキストのみ、SPは縦積み＋下向きシェブロン区切り、PCは横並び
@@ -103,10 +103,16 @@
 
 # 画像ファイル
 
-- `images/image1.png` … ベビステちゃん（マスコット）
-- `images/image2.png` … 書籍表紙（仮）
-- `images/dummy_illust1〜4.png` … 共感セクションのイラスト（差し替え予定）
-- `images/marked.min.js` … Markdownパーサー（privacy.md表示用）
+- `images/favicon.png` … ファビコン
+- `images/icon.png` … トップバーのロゴ（ベビステちゃん）
+- `images/hero-pc.png` / `images/hero-sp.png` … ヒーローの書影画像（PC/SP）
+- `images/illust1.png`〜`images/illust3.png` … 共感セクションのイラスト
+- `images/mechanism-illust-pc.png` / `images/Mechanism-illust-sp.png` … 仕組みセクションのベビステちゃん画像（PC/SP）
+- `images/form-success-area-pc.png` / `images/form-success-area-sp.png` … フォーム送信完了時の画像（PC/SP）
+- `images/profile.png` … 監修者プロフィール写真
+- `images/book.png` … 関連書籍の書影
+
+Markdownパーサー（`privacy.md` 表示用）は `marked.js` をCDN（jsDelivr）から読み込む形式に変更済み。`images/` にローカルファイルとしては置かない。
 
 ---
 
